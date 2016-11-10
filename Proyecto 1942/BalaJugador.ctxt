@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=BalaJugador
+comment0.text=\r\nLa\ clase\ simula\ la\ bala\ disparada\ por\ el\ avion\r\n
+comment1.params=direccion
+comment1.target=BalaJugador(int)
+comment2.params=
+comment2.target=void\ act()
+comment2.text=metodo\ Act,\ manda\ llamar\ a\ la\ clase\ move,\ para\ que\ la\ bala\ salga\r\nde\ la\ misma\ posicion\ X,Y\ que\ el\ avion\ del\ jugador
+numComments=3
