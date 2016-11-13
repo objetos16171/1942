@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=Disparo
+comment0.text=\r\nClase\ que\ representa\ al\ movimiento\ del\ disparo\ y\ la\ direccion\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=
+comment1.target=void\ act()
+comment1.text=\r\n\ Act\ -\ do\ whatever\ the\ Disparo\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+comment2.params=direction
+comment2.target=Disparo(int)
+comment2.text=\r\n\ Asigna\ la\ direccion\ de\ disparo\r\n
+comment3.params=
+comment3.target=void\ mueveDisparo()
+comment3.text=\r\n\ Clase\ que\ mueve\ el\ disparo\ segun\ la\ direccion\r\n
+numComments=4
