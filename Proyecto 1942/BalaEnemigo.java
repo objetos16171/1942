@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class BalaEnemigo extends MoverObjeto
+public class BalaEnemigo extends Disparo
 {
     private int dir;
     /**
@@ -15,12 +15,13 @@ public class BalaEnemigo extends MoverObjeto
      */
     public void act() 
     {
-        
+        super.mueveDisparo();
+        if(bordeMundo())
+            getWorld().removeObject(this);
     }    
     
     BalaEnemigo(int direccion){
-        dir=direccion;
-        setRotation(dir);
+       super(direccion);
     }
         
     

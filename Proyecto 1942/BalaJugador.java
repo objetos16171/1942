@@ -3,35 +3,50 @@ import java.util.*;
 /**
  *La clase simula la bala disparada por el avion
  */
-public class BalaJugador extends MoverObjeto
+public class BalaJugador extends Disparo
 {
     private int dir; 
     Enemigo1 E1;
 
     BalaJugador(int direccion)
     {
-        dir=direccion; 
-        setRotation(dir);
-        
+        super(direccion);
     }
 
-    /**metodo Act, manda llamar a la clase move, para que la bala salga
-     *de la misma posicion X,Y que el avion del jugador*/
     public void act() 
     {
         
-        move(); 
+        super.mueveDisparo();
         if(bordeMundo()){
             getWorld().removeObject(this); 
         }
-        //desapareceEnemigos();        
+        desapareceAvion();
     }    
-
+    
+    public void desapareceAvion(){
+        boolean touch=false;
+        try{
+        Enemigo1 Avion1=(Enemigo1)getOneIntersectingObject(Enemigo1.class);
+        if(Avion1!=null){
+            touch=true;
+            getWorld().removeObject(Avion1);
+        }
+        else
+            touch=false;
+            
+        if(touch==true)
+            getWorld().removeObject(this);
+        }
+        catch(Exception e){
+            System.out.println(e.getMessage()); //Mensaje de error 
+        }
+        
+    }
     /**Este metodo Elimina a los enemigos tocados por una bala
      *y lo desaparece junto con la bala
      *La intruccion "getOneIntersectingObject" Devuelve un objeto que se cruza con
     el objeto Tanque, en este caso la bala*/
-    /*public void desapareceEnemigos(){
+   /* public void desapareceEnemigos(){
         boolean touch1=false; //Bandera que me indica si la bala toco al tanque
         Niveles mundo=(Niveles)getWorld();
         try{
@@ -53,7 +68,7 @@ public class BalaJugador extends MoverObjeto
         }
         /**Codigo para el Enemigo 2*/
         
-       /* boolean touch2=false; //Bandera que me indica si la bala toco al tanque
+    /*    boolean touch2=false; //Bandera que me indica si la bala toco al tanque
         try{
             Actor Tanque2=getOneIntersectingObject(Enemigo2.class);
             if(Tanque2!=null){
@@ -72,7 +87,7 @@ public class BalaJugador extends MoverObjeto
             System.out.println(e.getMessage());
         }
         /**Codigo para el enemigo 3*/
-     /*   boolean touch3=false; //Bandera que me indica si la bala toco al tanque
+    /*    boolean touch3=false; //Bandera que me indica si la bala toco al tanque
         try{
             Actor Tanque3=getOneIntersectingObject(Enemigo3.class);
             if(Tanque3!=null){
@@ -94,7 +109,5 @@ public class BalaJugador extends MoverObjeto
         }
         catch(Exception e){
             System.out.println(e.getMessage());
-        }
+        }*/
     }
-    */
-}

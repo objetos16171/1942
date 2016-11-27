@@ -8,7 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class MyWorld extends World
 {
-
+    private background ima0;
+    private background ima1;
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -16,9 +17,18 @@ public class MyWorld extends World
     public MyWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(600, 400, 1); 
+        super(500, 500, 1); 
+         ima0 = new background();
+        addObject(ima0,getWidth()/2,getHeight()/2);
+        
+        ima1 = new background();
+        addObject(ima1,getWidth()/2,0 - getHeight()/2);
         prepare();
     }
+public void act(){
+    scroll();
+}
+    
 
     /**
      * Prepare the world for the start of the program.
@@ -51,5 +61,23 @@ public class MyWorld extends World
         addObject(enemigo14,111,93);
         Enemigo1 enemigo15 = new Enemigo1();
         addObject(enemigo15,487,84);
+        removeObject(enemigo14);
+        removeObject(enemigo15);
+        Enemigo1 enemigo16 = new Enemigo1();
+        addObject(enemigo16,101,86);
+        Enemigo1 enemigo17 = new Enemigo1();
+        addObject(enemigo17,317,72);
+        avionjugador.setLocation(311,457);
+        avionjugador.setLocation(311,458);
+    }
+
+
+    /**
+     * mueve las imagenes de Scroll
+     */
+    public void scroll()
+    {
+        ima0.scroll();
+        ima1.scroll();
     }
 }

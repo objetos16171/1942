@@ -5,16 +5,10 @@ comment1.params=
 comment1.target=AvionJugador()
 comment2.params=
 comment2.target=void\ act()
-comment3.params=
-comment3.target=void\ muevete()
-comment3.text=Metodo\ de\ movimiento\ y\ verifica\ si\ existe\ un\ muro
-comment4.params=
-comment4.target=void\ cambiaPosicion()
-comment4.text=\r\n\ Cuando\ se\ encuentra\ con\ una\ pared\ da\ vuelta\ \r\n\ y\ cambia\ de\ posicion\r\n
-comment5.params=Rotacion
-comment5.target=void\ cambiaDireccion(int)
-comment5.text=\r\n\ Cambia\ la\ Direccion\ del\ tanque\ del\ jugador\ dependiendo\ hacia\ donde\ se\ haya\ girado\r\n\ 270\=\ Arriba\ \=1\r\n\ 90\=\ Abajo\ \=3\r\n\ 0\=\ Deracha\ \=2\r\n\ 180\=Izquierda\ \=4\r\n
-comment6.params=
-comment6.target=void\ dispara()
-comment6.text=\ \r\n\ Hace\ que\ el\ tanque\ del\ usuario\ dispare\ con\ la\ tecla\ abajo\ del\ las\ teclas\ de\ direccion\r\n
-numComments=7
+comment3.params=Rotacion
+comment3.target=void\ cambiaDireccion(int)
+comment3.text=\r\n\ Cambia\ la\ Direccion\ del\ tanque\ del\ jugador\ dependiendo\ hacia\ donde\ se\ haya\ girado\r\n\ 270\=\ Arriba\ \=1\r\n\ 90\=\ Abajo\ \=3\r\n\ 0\=\ Deracha\ \=2\r\n\ 180\=Izquierda\ \=4\r\n
+comment4.params=direction
+comment4.target=void\ setShot(int)
+comment4.text=\ \r\n\ Hace\ que\ el\ tanque\ del\ usuario\ dispare\ con\ la\ tecla\ abajo\ del\ las\ teclas\ de\ direccion\r\n
+numComments=5

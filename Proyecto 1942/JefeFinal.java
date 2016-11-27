@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class JefeFinal extends Enemigo
+public class JefeFinal extends Avion
 {
     /**
      * Act - do whatever the JefeFinal wants to do. This method is called whenever
