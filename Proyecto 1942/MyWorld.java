@@ -10,6 +10,8 @@ public class MyWorld extends World
 {
     private background ima0;
     private background ima1;
+    private Contador vida; 
+    private int vidas;
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -23,6 +25,8 @@ public class MyWorld extends World
         
         ima1 = new background();
         addObject(ima1,getWidth()/2,0 - getHeight()/2);
+        
+        vidas=5;
         prepare();
     }
 public void act(){
@@ -69,6 +73,7 @@ public void act(){
         addObject(enemigo17,317,72);
         avionjugador.setLocation(311,457);
         avionjugador.setLocation(311,458);
+        ponContador();
     }
 
 
@@ -79,5 +84,40 @@ public void act(){
     {
         ima0.scroll();
         ima1.scroll();
+    }
+    /**
+     * Agrega un contador de vidas y puntaje
+     */
+     public void ponContador()
+    {
+        vida=new Contador("Vidas: ");
+        addObject(vida,450,480);
+        vida.setValue(5);
+    }
+    /**
+     * Quita una vida al jugador
+     */
+     public void quitaVida(int V)
+    {
+        switch(V)
+        {
+            case 1:
+            vidas--;
+            creaJugador();
+            vida.setValue(vidas);
+            break;
+            case 2:
+            vidas++;
+            vida.setValue(vidas);
+            break;
+        }
+    }  
+    /**
+     * Crea al jugador
+     */
+    public void creaJugador()
+    {    
+        Avion a=new AvionJugador();
+        addObject(a,218,456);
     }
 }

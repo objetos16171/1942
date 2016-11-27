@@ -16,13 +16,59 @@ public class BalaEnemigo extends Disparo
     public void act() 
     {
         super.mueveDisparo();
-        if(bordeMundo())
-            getWorld().removeObject(this);
+        desapareceAvion();
     }    
-    
+    /**
+     * Contructor de la clase BalaEnemigo
+     */
     BalaEnemigo(int direccion){
        super(direccion);
     }
-        
+    /**
+     * Desapacere al tanque cuando es tocadopor una bala
+     */
+    public void desapareceAvion(){
+        boolean touch =false;
+        World mundo=getWorld();
+        MyWorld MYWorld= (MyWorld) mundo;
+        Actor Avion=getOneIntersectingObject(AvionJugador.class);
+        try{
+        if(Avion!=null){
+            touch=true;
+            getWorld().removeObject(Avion);
+            ReapareceJugador(1);
+            getWorld().removeObject(this);
+        }
+        else
+            touch=false;
+            
+        if(touch){
+            getWorld().removeObject(this);
+        }
+         if(bordeMundo())
+            getWorld().removeObject(this);
+        }
+        catch(Exception e)
+        {
+            System.out.println(e.getMessage());
+        } 
+    }
+    /**
+     * Metodo para crear un nuevo jugador, una vez tocado por una bala del enemigo
+     */
+    public void ReapareceJugador(int i){
+        if(i==1){
+            World mundo=getWorld();
+            MyWorld MYWorld= (MyWorld) mundo;
+            MYWorld.quitaVida(1);
+        }
+        if(i==0)
+        {
+            World mundo=getWorld();
+            MyWorld MYWorld= (MyWorld) mundo;
+            MYWorld.quitaVida(2);
+        }
+
+    }    
     
 }

@@ -17,7 +17,7 @@ public class Enemigo1 extends Avion
         setRotation(90);
         move(2);
         int x = 0;
-        x = Greenfoot.getRandomNumber(10);//75
+        x = Greenfoot.getRandomNumber(50);//75
         if(x == 5){
             setShot(1); //disparo hacia abajo
     }    
