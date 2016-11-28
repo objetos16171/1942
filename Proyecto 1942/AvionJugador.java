@@ -10,13 +10,16 @@ public class AvionJugador extends Avion
     private GreenfootImage imagenB; //Para cambiar la imagen blindaje
     private GreenfootImage imagenN; //Para cambiar la imagen normal
     int vida;
+    private Enemigo1 enemigo;
 
+    
     public AvionJugador()
     {
         //imagenB=new GreenfootImage("Tanque_Jugador_Blindaje_SinFondo.png");
         //imagenN=new GreenfootImage("Tanque_Jugador_SinFondo.png");
         //setImage(imagenN);
         vida=2;
+        enemigo= new Enemigo1();
     }
 
     public void act() 
@@ -32,6 +35,7 @@ public class AvionJugador extends Avion
         
         
         setShot(0);
+        detenerFuego();
         //velocidad++;
         //blindaje();
     } 
@@ -73,6 +77,22 @@ public class AvionJugador extends Avion
             super.setIsShot(true);
         }
     } 
+    public void detenerFuego(){
+        boolean touch =false;
+        World mundo=getWorld();
+        MyWorld MYWorld= (MyWorld) mundo;
+        Actor Poder=getOneIntersectingObject(detenerFuego.class);
+        if(Poder!=null){
+            try{
+            getWorld().removeObject(Poder);
+            //Greenfoot.stop();                    
+        }
+        catch(Exception e)
+        {
+            System.out.println(e.getMessage());
+        } 
+        }
+    }
 
     /**Cambia la imagen del tanquue*/
    /* public void cambiaImagen()

@@ -21,4 +21,6 @@ comment6.text=\r\n\ Quita\ una\ vida\ al\ jugador\r\n
 comment7.params=
 comment7.target=void\ creaJugador()
 comment7.text=\r\n\ Crea\ al\ jugador\r\n
-numComments=8
+comment8.params=disparo
+comment8.target=void\ setDisparo(int)
+numComments=9

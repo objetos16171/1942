@@ -12,6 +12,7 @@ public class MyWorld extends World
     private background ima1;
     private Contador vida; 
     private int vidas;
+    private Enemigo1 enemigo;
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -41,39 +42,17 @@ public void act(){
     private void prepare()
     {
         AvionJugador avionjugador = new AvionJugador();
-        addObject(avionjugador,262,354);
-        Enemigo1 enemigo1 = new Enemigo1();
-        addObject(enemigo1,164,83);
-        enemigo1.setLocation(164,83);
-        enemigo1.setLocation(164,83);
-        enemigo1.setLocation(164,83);
-        enemigo1.setLocation(141,16);
-        enemigo1.setLocation(141,16);
-        enemigo1.setLocation(141,16);
-        enemigo1.setLocation(141,16);
-        enemigo1.setLocation(142,2);
-        Enemigo1 enemigo12 = new Enemigo1();
-        addObject(enemigo12,408,8);
-        Enemigo1 enemigo13 = new Enemigo1();
-        addObject(enemigo13,279,13);
-        enemigo13.setLocation(279,11);
-        enemigo12.setLocation(421,68);
-        removeObject(enemigo12);
-        removeObject(enemigo13);
-        removeObject(enemigo1);
-        Enemigo1 enemigo14 = new Enemigo1();
-        addObject(enemigo14,111,93);
-        Enemigo1 enemigo15 = new Enemigo1();
-        addObject(enemigo15,487,84);
-        removeObject(enemigo14);
-        removeObject(enemigo15);
-        Enemigo1 enemigo16 = new Enemigo1();
-        addObject(enemigo16,101,86);
-        Enemigo1 enemigo17 = new Enemigo1();
-        addObject(enemigo17,317,72);
+        addObject(avionjugador,262,354);     
         avionjugador.setLocation(311,457);
         avionjugador.setLocation(311,458);
         ponContador();
+        detenerFuego detenerfuego = new detenerFuego();
+        addObject(detenerfuego,387,367);
+        detenerfuego.setLocation(204,448);
+        Enemigo1 enemigo1 = new Enemigo1();
+        addObject(enemigo1,136,89);
+        Enemigo1 enemigo12 = new Enemigo1();
+        addObject(enemigo12,328,67);        
     }
 
 
@@ -119,5 +98,9 @@ public void act(){
     {    
         Avion a=new AvionJugador();
         addObject(a,218,456);
+    }
+    
+    public void setDisparo(int disparo){
+        enemigo.setDisparo(0);
     }
 }
