@@ -30,7 +30,7 @@ public class BalaEnemigo extends Disparo
     public void desapareceAvion(){
         boolean touch =false;
         World mundo=getWorld();
-        MyWorld MYWorld= (MyWorld) mundo;
+        Niveles MYWorld= (Niveles) mundo;
         Actor Avion=getOneIntersectingObject(AvionJugador.class);
         try{
         if(Avion!=null){
@@ -59,13 +59,13 @@ public class BalaEnemigo extends Disparo
     public void ReapareceJugador(int i){
         if(i==1){
             World mundo=getWorld();
-            MyWorld MYWorld= (MyWorld) mundo;
+            Niveles MYWorld= (Niveles) mundo;
             MYWorld.quitaVida(1);
         }
         if(i==0)
         {
             World mundo=getWorld();
-            MyWorld MYWorld= (MyWorld) mundo;
+            Niveles MYWorld= (Niveles) mundo;
             MYWorld.quitaVida(2);
         }
 
