@@ -80,7 +80,7 @@ public class AvionJugador extends Avion
     public void detenerFuego(){
         boolean touch =false;
         World mundo=getWorld();
-        MyWorld MYWorld= (MyWorld) mundo;
+        Niveles MYWorld= (Niveles) mundo;
         Actor Poder=getOneIntersectingObject(detenerFuego.class);
         if(Poder!=null){
             try{
