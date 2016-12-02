@@ -14,17 +14,14 @@ public class Nivel1 extends Niveles
      * 
      */
     public Nivel1()
-    {
-        //creaInterfaz();
-        //if(timer.millisElapsed()>1000)
-        //juego();
+    {      
         super();
     }
     
    @Override
    public void act(){
-       if(super.agregaEnemigo(1) && !super.getAmbiente()){
-            super.creaEnemigo();
+       if(super.agregaEnemigo(1) && !super.getAmbiente()){      
+           super.creaEnemigo();
         }
     super.scroll();
     }

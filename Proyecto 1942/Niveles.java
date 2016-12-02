@@ -39,10 +39,7 @@ public class Niveles extends World
         creaJugador();
         ponContador();                
     }
-    
-    public void juego(){
-        creaEnemigo();
-    }
+ 
     //public void act(){
     //scroll();
     //}
@@ -123,21 +120,12 @@ public class Niveles extends World
     /**
      * Crea Enemigos
      */
-    public void creaEnemigo(){
-        //int x;
-        //x = Greenfoot.getRandomNumber(getWidth() - 45);
-        //x+=30;
-        Enemigo1 enemigo1 = new Enemigo1();
-        addObject(enemigo1,136,89);
-        Enemigo1 enemigo12 = new Enemigo1();
-        addObject(enemigo12,328,67);        
-        
-        
-       //int x;
-     //x = Greenfoot.getRandomNumber(getWidth() - 45);
-     //x+=30;
-     //Enemigo1 e1 = new Enemigo1();
-     //addObject(e1,x,0);
+    public void creaEnemigo(){                         
+     int x;
+     x = Greenfoot.getRandomNumber(getWidth() - 45);
+     x+=30;
+     Enemigo1 e1 = new Enemigo1();
+     addObject(e1,x,20);
     }
 
     /**

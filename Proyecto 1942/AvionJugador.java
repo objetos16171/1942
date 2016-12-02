@@ -85,7 +85,7 @@ public class AvionJugador extends Avion
         if(Poder!=null){
             try{
             getWorld().removeObject(Poder);
-            //Greenfoot.stop();                    
+            MYWorld.setDisparo(0);
         }
         catch(Exception e)
         {
