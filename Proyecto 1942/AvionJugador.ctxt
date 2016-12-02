@@ -13,4 +13,6 @@ comment4.target=void\ setShot(int)
 comment4.text=\ \r\n\ Hace\ que\ el\ tanque\ del\ usuario\ dispare\ con\ la\ tecla\ abajo\ del\ las\ teclas\ de\ direccion\r\n
 comment5.params=
 comment5.target=void\ detenerFuego()
-numComments=6
+comment6.params=
+comment6.target=void\ aumentaVida()
+numComments=7

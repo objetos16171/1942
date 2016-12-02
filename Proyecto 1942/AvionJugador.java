@@ -36,6 +36,7 @@ public class AvionJugador extends Avion
         
         setShot(0);
         detenerFuego();
+        aumentaVida();
         //velocidad++;
         //blindaje();
     } 
@@ -92,6 +93,17 @@ public class AvionJugador extends Avion
             System.out.println(e.getMessage());
         } 
         }
+    }
+    
+    public void aumentaVida(){
+        World mundo=getWorld();
+        Niveles MYWorld= (Niveles) mundo;
+        Actor vida=getOneIntersectingObject(Vida.class);
+        if(vida!= null){
+            MYWorld.removeObject(vida);
+            MYWorld.quitaVida(2);
+        }
+        
     }
 
     /**Cambia la imagen del tanquue*/
