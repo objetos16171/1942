@@ -23,6 +23,9 @@ public class Nivel1 extends Niveles
        if(super.agregaEnemigo(1) && !super.getAmbiente()){      
            super.creaEnemigo();
         }
+        if(super.timeAddPunto(8) && !super.getAmbiente()){
+            super.addPunto();
+        }
     super.scroll();
     }
 }

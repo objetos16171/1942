@@ -15,5 +15,11 @@ public class Vida extends Poderes
     public void act() 
     {
         // Add your action code here.
+        super.mueve();
     }    
+    
+    public Vida()
+    {
+        super();
+    }
 }

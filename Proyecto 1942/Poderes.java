@@ -16,4 +16,10 @@ public class Poderes extends Actor
     {
         // Add your action code here.
     }    
+    
+    public void mueve()
+    {
+        setRotation(90);
+        move(3);
+    }
 }

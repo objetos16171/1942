@@ -14,6 +14,7 @@ public class Niveles extends World
     private int vidas;
     private Enemigo1 enemigo;
     private SimpleTimer timer;
+    private SimpleTimer timerVida;
     private boolean ambiente;
     /**
      * Constructor for objects of class MyWorld.
@@ -30,6 +31,7 @@ public class Niveles extends World
         ima1 = new background();
         addObject(ima1,getWidth()/2,0 - getHeight()/2);
         timer= new SimpleTimer();
+        timerVida = new SimpleTimer();//timepo para agregar puntos
         vidas=5;    
         ambiente = false;
         creaInterfaz();
@@ -141,7 +143,15 @@ public class Niveles extends World
             return false;
         }
     }
-    
+    /**
+     * Agrega una vida, el metodo genera su posicion y lo agrega al  mundo
+     */
+    public void addPunto()
+    {
+        int x =  Greenfoot.getRandomNumber((getWidth() - 20) + 10);
+        Vida v = new Vida();
+        addObject(v,x,5);
+    }
     /**
      * cuando la instancia es false esta en la parte inicial del nivel
      * cuando esta en true esta en la parte del enemigo final
@@ -157,5 +167,22 @@ public class Niveles extends World
     public void setAmbiente(boolean ambiente)
     {
         this.ambiente = ambiente;
+    }
+    
+    /**
+     * metodo usado chechar tiempo de agregar un puntos extra.
+     * @parama segundo es el tiempo en segundos para agregar puntos extra
+     * @return regresa un true si a pasado el tiempo indicado
+     */
+    public boolean timeAddPunto(int segundo)//12
+    {
+        if(timerVida.millisElapsed() > (segundo * 1000)){
+            timerVida.mark();
+            //System.out.println("agregar punto");
+            return true;
+        }
+        else{
+            return false;
+        }
     }
 }
