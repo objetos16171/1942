@@ -11,11 +11,13 @@ public class Niveles extends World
     private background ima0;
     private background ima1;
     private Contador vida; 
+    private Contador Puntaje;
     private int vidas;
     private Enemigo1 enemigo;
     private SimpleTimer timer;
     private SimpleTimer timerVida;
     private boolean ambiente;
+    private int enemigosMuertos;
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -33,6 +35,7 @@ public class Niveles extends World
         timer= new SimpleTimer();
         timerVida = new SimpleTimer();//timepo para agregar puntos
         vidas=5;    
+        enemigosMuertos=0;
         ambiente = false;
         creaInterfaz();
     }
@@ -85,6 +88,10 @@ public class Niveles extends World
         vida=new Contador("Vidas: ");
         addObject(vida,450,480);
         vida.setValue(5);
+        
+        Puntaje= new Contador("Puntos: ");
+        addObject(Puntaje,60,477);
+        Puntaje.setValue(0);
     }
 
     /**
@@ -104,8 +111,20 @@ public class Niveles extends World
             vida.setValue(vidas);
             break;
         }
-    }  
-
+    }
+    /**
+     * Agrega puntos 
+     */
+    public void agregaPuntos(int numero){
+       switch (numero)
+       {
+           case 1:
+                    enemigosMuertos++;
+                    Puntaje.setValue(enemigosMuertos);
+           break;
+           
+       }
+    }
     /**
      * Crea al jugador
      */

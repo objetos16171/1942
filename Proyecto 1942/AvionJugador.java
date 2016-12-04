@@ -94,7 +94,9 @@ public class AvionJugador extends Avion
         } 
         }
     }
-    
+    /**
+     * Aumenta la vida del jugador
+     */
     public void aumentaVida(){
         World mundo=getWorld();
         Niveles MYWorld= (Niveles) mundo;
@@ -105,33 +107,5 @@ public class AvionJugador extends Avion
         }
         
     }
-
-    /**Cambia la imagen del tanquue*/
-   /* public void cambiaImagen()
-    {
-        World mundo=getWorld();
-        Niveles MYWorld= (Niveles) mundo;
-        if(getImage()==imagenN)
-        {
-            setImage(imagenB);
-            MYWorld.quitaVida(2);
-        }else
-        {
-            setImage(imagenN);
-        }
-    }*/
-
-    /**Modifica la imagen del Tanque, haciendo que paresca que traiga un blindaje alrededor*/
-  /*  public void blindaje()
-    {
-        boolean touch=false;
-        Niveles mundo=(Niveles)getWorld();
-        Actor blindaje=getOneIntersectingObject(Blindaje.class);
-        if(blindaje!=null)
-        {
-            getWorld().removeObject(blindaje);
-            cambiaImagen();
-        }
-    }
-    */
+    
 }
