@@ -9,6 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Enemigo1 extends Avion
 {
     //private boolean disparar=true;
+    int vida=2;
     private int disparar;
     /**
      * Act - do whatever the Enemigo1 wants to do. This method is called whenever
@@ -64,5 +65,14 @@ private void setShot(int direction)
      */
     public void setDisparo(int disparo){
         this.disparar=disparo;
+    }
+    /**Metodo que baja la vida del enemigo 1*/
+    public void bajaVida()
+    {
+        vida--;
+    }
+    public int getVida()
+    {
+        return vida;
     }
 }

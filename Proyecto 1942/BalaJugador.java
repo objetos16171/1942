@@ -32,8 +32,11 @@ public class BalaJugador extends Disparo
         Enemigo1 Avion1=(Enemigo1)getOneIntersectingObject(Enemigo1.class);
         if(Avion1!=null){
             touch=true;
+            Avion1.bajaVida();
+            if(Avion1.getVida()==0){
             getWorld().removeObject(Avion1);    
             MYWorld.agregaPuntos(1);
+        }
         }
         else
             touch=false;
