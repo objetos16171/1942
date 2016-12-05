@@ -15,5 +15,5 @@ comment5.params=
 comment5.target=void\ detenerFuego()
 comment6.params=
 comment6.target=void\ aumentaVida()
-comment6.text=\r\n\ A\r\n
+comment6.text=\r\n\ Aumenta\ la\ vida\ del\ jugador\r\n
 numComments=7

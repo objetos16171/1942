@@ -165,11 +165,11 @@ public class Niveles extends World
     /**
      * Agrega una vida, el metodo genera su posicion y lo agrega al  mundo
      */
-    public void addPunto()
+    public void addVida()
     {
         int x =  Greenfoot.getRandomNumber((getWidth() - 20) + 10);
         Vida v = new Vida();
-        addObject(v,x,5);
+        addObject(v,x,5);               
     }
     /**
      * cuando la instancia es false esta en la parte inicial del nivel
@@ -203,5 +203,12 @@ public class Niveles extends World
         else{
             return false;
         }
+    }
+    
+    public boolean cambiaNivel(){
+        if(enemigosMuertos==10)
+            return true;
+        else
+            return false;
     }
 }

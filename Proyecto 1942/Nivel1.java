@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Nivel1 extends Niveles
 {
-
+    private Nivel2 level2;
     /**
      * Constructor for objects of class Nivel1.
      * 
@@ -16,6 +16,7 @@ public class Nivel1 extends Niveles
     public Nivel1()
     {      
         super();
+        level2= new Nivel2();
     }
     
    @Override
@@ -24,8 +25,12 @@ public class Nivel1 extends Niveles
            super.creaEnemigo();
         }
         if(super.timeAddPunto(8) && !super.getAmbiente()){
-            super.addPunto();
+            super.addVida();
         }
     super.scroll();
+    if(cambiaNivel())
+    {
+        Greenfoot.setWorld(level2);
+    }
     }
 }

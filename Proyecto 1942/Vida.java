@@ -15,11 +15,19 @@ public class Vida extends Poderes
     public void act() 
     {
         // Add your action code here.
-        super.mueve();
+        super.mueve();  
+        //desaparece();
     }    
     
     public Vida()
     {
         super();
+    }
+    
+    public void desaparece(){
+        if(bordeMundo())
+        {
+            getWorld().removeObject(this);
+        }
     }
 }
