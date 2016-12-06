@@ -1,7 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Nivel1 here.
+ * Clase del primer nivel del juego
  * 
  * @author (your name) 
  * @version (a version number or a date)
@@ -22,15 +22,18 @@ public class Nivel1 extends Niveles
    @Override
    public void act(){
        if(super.agregaEnemigo(1) && !super.getAmbiente()){      
-           super.creaEnemigo();
+           super.creaEnemigo(1);
         }
         if(super.timeAddPunto(8) && !super.getAmbiente()){
             super.addVida();
         }
-    super.scroll();
-    if(cambiaNivel())
-    {
-        Greenfoot.setWorld(level2);
-    }
+        super.scroll();
+        if(cambiaNivel())
+        {
+            //Greenfoot.delay(100);
+            //setBackground("Nivel2.png");
+            Greenfoot.setWorld(level2);
+        }
+    super.terminaJuego();
     }
 }

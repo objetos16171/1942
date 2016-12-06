@@ -17,7 +17,7 @@ public class Niveles extends World
     private SimpleTimer timer;
     private SimpleTimer timerVida;
     private boolean ambiente;
-    private int enemigosMuertos;
+    private int enemigosMuertos=0;
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -35,7 +35,7 @@ public class Niveles extends World
         timer= new SimpleTimer();
         timerVida = new SimpleTimer();//timepo para agregar puntos
         vidas=5;    
-        enemigosMuertos=0;
+        //enemigosMuertos=0;
         ambiente = false;
         creaInterfaz();
     }
@@ -108,7 +108,7 @@ public class Niveles extends World
             break;
             case 2:
             vidas++;
-            vida.setValue(vidas);
+            vida.setValue(vidas);            
             break;
         }
     }
@@ -141,12 +141,23 @@ public class Niveles extends World
     /**
      * Crea Enemigos
      */
-    public void creaEnemigo(){                         
-     int x;
-     x = Greenfoot.getRandomNumber(getWidth() - 45);
-     x+=30;
-     Enemigo1 e1 = new Enemigo1();
-     addObject(e1,x,20);
+    public void creaEnemigo(int nivel){                         
+        switch(nivel){
+            case 1:
+            int x1;
+            x1 = Greenfoot.getRandomNumber(getWidth() - 45);
+            x1+=30;
+            Enemigo1 e1 = new Enemigo1();
+            addObject(e1,x1,20);
+            break;
+            case 2:
+            int x2;
+            x2 = Greenfoot.getRandomNumber(getWidth() - 45);
+            x2+=30;
+            Enemigo2 e2 = new Enemigo2();
+            addObject(e2,x2,20);
+            break;
+    }
     }
 
     /**
@@ -204,11 +215,30 @@ public class Niveles extends World
             return false;
         }
     }
-    
+    /**
+     * Metodo que regresa F/V cuando el jugador destruye N Enemigos
+     */
     public boolean cambiaNivel(){
         if(enemigosMuertos==10)
             return true;
         else
             return false;
+    }
+    /**
+     * Este metodo evalua las vidas del jugador si llega a 0 
+     * se manda a la pantalla Game Over.
+     */
+    public void terminaJuego()
+    {
+        if(vidas== 0){
+            Greenfoot.setWorld(new GameOver()); 
+        }
+    }
+    /**
+     * Cambia el valor de los puntos
+     */
+    public void puntos(int p)
+    {
+        Puntaje.setValue(p);
     }
 }
