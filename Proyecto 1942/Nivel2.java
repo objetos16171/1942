@@ -28,6 +28,9 @@ public class Nivel2 extends Niveles
         if(super.timeAddPunto(8) && !super.getAmbiente()){
             super.addVida();
         }
+        if(super.timeAddPunto(10) && !super.getAmbiente()){
+            super.addDetenFuego();
+        }
         if(cambiaNivel())
         {
             //Greenfoot.delay(100);

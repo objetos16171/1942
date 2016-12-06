@@ -70,5 +70,29 @@ public class BalaJugador extends Disparo
         catch(Exception e){
             System.out.println(e.getMessage()); //Mensaje de error 
         }
+        
+        /**Codigo para el enemigo 2*/
+        boolean touch3=false;
+        
+        try{
+            Enemigo3 Avion3=(Enemigo3)getOneIntersectingObject(Enemigo3.class);
+            if(Avion3!=null){
+                touch3=true;
+                Avion3.bajaVida();
+                if(Avion3.getVida()==0){
+                    getWorld().removeObject(Avion3);
+                    MYWorld.agregaPuntos(1);
+                }                
+            }
+            else
+                touch3=false;
+                
+            if(touch3==true){
+                getWorld().removeObject(this);  
+            }
+        }
+        catch(Exception e){
+            System.out.println(e.getMessage()); //Mensaje de error 
+        }
     }
     }

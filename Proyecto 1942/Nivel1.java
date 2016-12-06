@@ -27,6 +27,9 @@ public class Nivel1 extends Niveles
         if(super.timeAddPunto(8) && !super.getAmbiente()){
             super.addVida();
         }
+        if(super.timeAddPunto(10) && !super.getAmbiente()){
+            super.addDetenFuego();
+        }
         super.scroll();
         if(cambiaNivel())
         {

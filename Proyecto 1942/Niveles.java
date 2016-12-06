@@ -1,7 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class MyWorld here.
+ * clase donde se crean metodos que se utilizaran en los demas niveles
  * 
  * @author (your name) 
  * @version (a version number or a date)
@@ -157,6 +157,12 @@ public class Niveles extends World
             Enemigo2 e2 = new Enemigo2();
             addObject(e2,x2,20);
             break;
+            case 3:
+            int x3;
+            x3 = Greenfoot.getRandomNumber(getWidth() - 45);
+            x3+=30;
+            Enemigo3 e3 = new Enemigo3();
+            addObject(e3,x3,20);
     }
     }
 
@@ -181,6 +187,15 @@ public class Niveles extends World
         int x =  Greenfoot.getRandomNumber((getWidth() - 20) + 10);
         Vida v = new Vida();
         addObject(v,x,5);               
+    }
+    /**
+     * Agrega el poder de detener el fuego enemigo
+     */
+    public void addDetenFuego()
+    {
+        int x =  Greenfoot.getRandomNumber((getWidth() - 20) + 10);
+        detenerFuego f = new detenerFuego();
+        addObject(f,x,5);               
     }
     /**
      * cuando la instancia es false esta en la parte inicial del nivel
