@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Enemigo3 extends Avion
 {
-    int vida=2;
+    int vida=5;
     private int disparar;
     /**
      * Act - do whatever the Enemigo3 wants to do. This method is called whenever

@@ -15,5 +15,24 @@ public class Nivel5 extends Niveles
      */
     public Nivel5()
     {
+        super();
+    }
+    public void act(){
+        if(super.agregaEnemigo(1) && !super.getAmbiente()){      
+           super.creaEnemigo(1);
+           super.creaEnemigo(2);
+           super.creaEnemigo(3);
+           super.creaEnemigo(4);
+        }
+        if(super.timeAddPunto(8) && !super.getAmbiente()){
+            super.addVida();
+        }     
+        if(cambiaNivel())
+        {
+            //Greenfoot.delay(100);
+            //setBackground("Nivel2.png");
+            //Greenfoot.setWorld(level5);
+        }
+    super.terminaJuego();
     }
 }

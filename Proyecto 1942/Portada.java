@@ -40,7 +40,7 @@ public class Portada extends World
         if(Greenfoot.isKeyDown("h"))
         {
             removeObjects(getObjects(null));
-            setBackground("Ayuda.jpg");
+            setBackground("Ayuda.png");
         }
           
     }

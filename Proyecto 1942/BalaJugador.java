@@ -71,7 +71,7 @@ public class BalaJugador extends Disparo
             System.out.println(e.getMessage()); //Mensaje de error 
         }
         
-        /**Codigo para el enemigo 2*/
+        /**Codigo para el enemigo 3*/
         boolean touch3=false;
         
         try{
@@ -88,6 +88,30 @@ public class BalaJugador extends Disparo
                 touch3=false;
                 
             if(touch3==true){
+                getWorld().removeObject(this);  
+            }
+        }
+        catch(Exception e){
+            System.out.println(e.getMessage()); //Mensaje de error 
+        }
+        
+        /**Codigo para el jefe final*/
+        boolean touch4=false;
+        
+        try{
+            JefeFinal jefe=(JefeFinal)getOneIntersectingObject(JefeFinal.class);
+            if(jefe!=null){
+                touch3=true;
+                jefe.bajaVida();
+                if(jefe.getVida()==0){
+                    getWorld().removeObject(jefe);
+                    MYWorld.juegoGanado();
+                }                
+            }
+            else
+                touch4=false;
+                
+            if(touch4==true){
                 getWorld().removeObject(this);  
             }
         }

@@ -45,32 +45,6 @@ public class Niveles extends World
         ponContador();                
     }
  
-    //public void act(){
-    //scroll();
-    //}
-
-    /**
-     * Prepare the world for the start of the program.
-     * That is: create the initial objects and add them to the world.
-     */
-    /* private void prepare()
-    {
-    AvionJugador avionjugador = new AvionJugador();
-    addObject(avionjugador,262,354);     
-    avionjugador.setLocation(311,457);
-    avionjugador.setLocation(311,458);
-    ponContador();
-    detenerFuego detenerfuego = new detenerFuego();
-    addObject(detenerfuego,387,367);
-    detenerfuego.setLocation(204,448);
-    /*Enemigo1 enemigo1 = new Enemigo1();
-    addObject(enemigo1,136,89);
-    Enemigo1 enemigo12 = new Enemigo1();
-    addObject(enemigo12,328,67);        
-    
-   //creaEnemigo();
-    }¨/
-
     /**
      * mueve las imagenes de Scroll
      */
@@ -137,7 +111,6 @@ public class Niveles extends World
     public void setDisparo(int disparo){
         enemigo.setDisparo(0);
     }
-
     /**
      * Crea Enemigos
      */
@@ -163,6 +136,11 @@ public class Niveles extends World
             x3+=30;
             Enemigo3 e3 = new Enemigo3();
             addObject(e3,x3,20);
+            break;
+            case 4:
+            JefeFinal j = new JefeFinal();
+            addObject(j,300,20);
+            break;
     }
     }
 
@@ -248,6 +226,12 @@ public class Niveles extends World
         if(vidas== 0){
             Greenfoot.setWorld(new GameOver()); 
         }
+    }
+    /**
+     * Cuando el jugador gana
+     */
+    public void juegoGanado(){
+        Greenfoot.setWorld(new juegoGanado()); 
     }
     /**
      * Cambia el valor de los puntos
